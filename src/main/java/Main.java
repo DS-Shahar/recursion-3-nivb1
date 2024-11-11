@@ -103,6 +103,32 @@ class Main {
 			return exe42(a);
 		}
 	}
+	public static boolean issort(int n) {
+		if (n / 10 == 0) {
+	        return true;
+	    }
+
+	    int lastDigit = n % 10;
+	    int secondLastDigit = (n / 10) % 10;
+
+	   	    if (lastDigit < secondLastDigit) {
+	        return false;
+	    }
+	   	    
+	   	return issort(n/10);
+	}
+	public static int count(int[] arr, int num, int i) {
+	    if (i == arr.length) {
+	        return 0;
+	    }
+
+	  
+	    if (arr[i] == num) {
+	        return 1 + count(arr, num, i + 1);
+	    } else {
+	        return count(arr, num, i + 1);
+	    }
+	}
   public static void main(String[] args) {
     System.out.println("Hello World!");
   }
